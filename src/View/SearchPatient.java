@@ -48,6 +48,7 @@ public class SearchPatient extends JFrame {
 		this.setSize(1200, 500);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setIconImage(Toolkit.getDefaultToolkit().createImage(SearchPatient.class.getResource("IconSearch.png")));
 		
 		Font font = new Font("Arial", Font.BOLD, 15);
 

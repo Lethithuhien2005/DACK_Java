@@ -73,6 +73,7 @@ public class AddPatientView extends JFrame{
 		this.setSize(400, 600);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setIconImage(Toolkit.getDefaultToolkit().createImage(AddPatientView.class.getResource("AddPatient.png")));
 
 		Font font = new Font("Arial", Font.BOLD, 15);
 		
