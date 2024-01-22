@@ -55,7 +55,7 @@ public class HomePageView extends JFrame {
 		});
 		JMenuItem jMenuItem_listDoctor = new JMenuItem("Doctor");
 		jMenuItem_listDoctor.setFont(font);
-		jMenuItem_listDoctor.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().createImage(HomePageView.class.getResource("Doctor.png"))));
+		jMenuItem_listDoctor.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().createImage(HomePageView.class.getResource("IconDoctor.png"))));
 		jMenuItem_listDoctor.addActionListener(new ActionListener() {
 			
 			@Override
