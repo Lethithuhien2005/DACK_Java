@@ -82,13 +82,4 @@ public class RoomView extends JFrame {
 		this.setVisible(true);
 
 	}
-	public static void main(String[] args) {
-		try {
-			UIManager.setLookAndFeel(UIManager.getLookAndFeel());
-			new RoomView();
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 }

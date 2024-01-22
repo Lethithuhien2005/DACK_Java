@@ -80,12 +80,4 @@ public class DepartmentView extends JFrame {
 		this.setVisible(true);
 	}
 
-	public static void main(String[] args) {
-		try {
-			UIManager.setLookAndFeel(UIManager.getLookAndFeel());
-			new DepartmentView();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 }

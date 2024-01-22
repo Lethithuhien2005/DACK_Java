@@ -257,14 +257,4 @@ public class AddPatientView extends JFrame{
 		this.add(jPanel_button, BorderLayout.SOUTH);
 		this.setVisible(true);
 	}
-	
-	public static void main(String[] args) {
-		try {
-			UIManager.setLookAndFeel(UIManager.getLookAndFeel());
-			new AddPatientView();
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 }

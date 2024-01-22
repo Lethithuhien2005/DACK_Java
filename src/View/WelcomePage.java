@@ -111,13 +111,4 @@ public class WelcomePage extends JFrame {
 		this.add(jPanel, BorderLayout.CENTER);
 		this.setVisible(true);
 	}
-	public static void main(String[] args) {
-		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-			new WelcomePage();
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 }

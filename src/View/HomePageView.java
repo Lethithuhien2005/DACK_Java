@@ -131,13 +131,4 @@ public class HomePageView extends JFrame {
 
 		this.setVisible(true);
 	}
-
-	public static void main(String[] args) {
-		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-			new HomePageView();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 }

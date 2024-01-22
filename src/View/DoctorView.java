@@ -84,13 +84,4 @@ public class DoctorView extends JFrame {
 		this.setVisible(true);
 
 	}
-	public static void main(String[] args) {
-		try {
-			UIManager.setLookAndFeel(UIManager.getLookAndFeel());
-			new DoctorView();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
 }

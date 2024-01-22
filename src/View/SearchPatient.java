@@ -228,13 +228,4 @@ public class SearchPatient extends JFrame {
 		}
 	}
 	
-	public static void main(String[] args) {
-		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-			new SearchPatient();
-		}
-		catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	}
 }
