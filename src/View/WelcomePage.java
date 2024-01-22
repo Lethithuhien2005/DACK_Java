@@ -79,6 +79,7 @@ public class WelcomePage extends JFrame {
 		
 		jMenuItem_exit.setFont(font);
 		jMenuItem_exit.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().createImage(WelcomePage.class.getResource(("Exit.png")))));
+		// Create key combination for jMenuItem "Exit":
 		jMenuItem_exit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F4, InputEvent.ALT_DOWN_MASK));
 		
 		jMenu_setting.add(jMenuItem_logIn);

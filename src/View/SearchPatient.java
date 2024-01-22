@@ -53,6 +53,8 @@ public class SearchPatient extends JFrame {
 
 		jTable_patient = new JTable();
 		jsp = new JScrollPane(jTable_patient, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		
+		//Add name's columns to model:
 		try {
 			model = (DefaultTableModel) jTable_patient.getModel();
 			ResultSet rs = new DBConnection().queryDB("SELECT * FROM patientfile");
@@ -87,11 +89,13 @@ public class SearchPatient extends JFrame {
 			@Override
 			public void keyReleased(KeyEvent e) {
 				arr.clear();
+				//Display patient when a char has been released:
 				try {
 					String sql = "SELECT * FROM patientfile WHERE Name like N'%" + jTextField_name.getText() + "%' ";
 					rs = new DBConnection().queryDB(sql);
 					System.out.println(sql);
 					
+					// Get information in columns:
 					while (rs.next()) {
 						String idPatient = rs.getString(1);
 						String namePt = rs.getNString(2);
@@ -198,8 +202,8 @@ public class SearchPatient extends JFrame {
 				model.addRow(new Object[] { ptModel.getID_patient(), ptModel.getName_patient(), ptModel.getGender(), ptModel.getDate(), ptModel.getAddress(), ptModel.getPhone(), ptModel.getID_room(), ptModel.getNumber_bed(), ptModel.getID_disease(), ptModel.getID_doctor(), ptModel.getDay_in(), ptModel.getDay_out() });
 				
 			}
-			System.out.println(model.getColumnCount());
-			System.out.println(model.getRowCount());
+			System.out.println(" number of collumn: " + model.getColumnCount());
+			System.out.println(" number of row: " + model.getRowCount());
 		} 
 		catch (Exception exc) {
 			System.out.println(exc.getMessage());

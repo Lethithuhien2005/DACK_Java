@@ -31,6 +31,7 @@ public class DepartmentView extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setIconImage(Toolkit.getDefaultToolkit().createImage(DoctorView.class.getResource("Department.png")));
 
+		//Load data from database to jTable:
 		Vector vData = null, vTitle = null;
 		try {
 			ResultSet rs = new DBConnection().queryDB("SELECT * FROM department");

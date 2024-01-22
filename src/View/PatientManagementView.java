@@ -59,9 +59,9 @@ public class PatientManagementView extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setIconImage(Toolkit.getDefaultToolkit().createImage(DoctorView.class.getResource("Medicalfile.png")));
 
-
 		Font font = new Font("Arial", Font.BOLD, 15);
-	
+		
+		//Load data from database to jTable:
 		vData = null;
 		vTitle = null;
 		try {
@@ -92,6 +92,7 @@ public class PatientManagementView extends JFrame {
 		jTable_patient = new JTable(model);
 		JScrollPane jsp = new JScrollPane(jTable_patient, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		
+		// Generate button "Add" to add new patient:
 		jPanel_button = new JPanel();
 		jButton_add = new JButton("Add");
 		jButton_add.setFont(font);
@@ -105,6 +106,8 @@ public class PatientManagementView extends JFrame {
 				}
 			}
 		});
+		
+		// Generate button "Delete" to delete patient:
 		jButton_delete = new JButton("Delete");
 		jButton_delete.setFont(font);
 		jButton_delete.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().createImage(PatientManagementView.class.getResource("Delete2.png"))));
@@ -119,6 +122,7 @@ public class PatientManagementView extends JFrame {
 			}
 		});
 		
+		// Generate button "Update" to modify information:
 		jButton_update = new JButton("Update");
 		jButton_update.setFont(font);
 		jButton_update.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().createImage(PatientManagementView.class.getResource("Update.png"))));
@@ -132,6 +136,8 @@ public class PatientManagementView extends JFrame {
 				
 			}
 		});
+		
+		// Generate button "Search" to search for patient:
 		jButton_search = new JButton("Search");
 		jButton_search.setFont(font);
 		jButton_search.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().createImage(PatientManagementView.class.getResource("Search.png"))));
@@ -176,6 +182,7 @@ public class PatientManagementView extends JFrame {
 
 	public void AddOrUpdatePatient(PatientModel pt) {
 		try {
+			// Add rows to table:
 			model.addRow(new Object[] {
 					pt.getID_patient(),
 					pt.getName_patient(),
@@ -191,6 +198,7 @@ public class PatientManagementView extends JFrame {
 					pt.getDay_out()
 			});
 			model.fireTableDataChanged();
+			// Add rows to Database:
 			AddPatientDAO addPatientDAO = new AddPatientDAO();
 			addPatientDAO.addPatient(pt);
 		}
@@ -199,7 +207,9 @@ public class PatientManagementView extends JFrame {
 		}
 		
 	}
-	private void delete() {
+	
+	//Delete a patient:
+	public void delete() {
 		try {
 			selectedRow = jTable_patient.getSelectedRow();
 			Vector pt = (Vector) this.vData.elementAt(selectedRow);
@@ -213,7 +223,9 @@ public class PatientManagementView extends JFrame {
 			ect.printStackTrace();
 		}	
 	}
+	// Display information of patient on jTextField / jComboBox to modify:
 	public void display_to_update() {
+		//Get information:
 		model = (DefaultTableModel) jTable_patient.getModel();
 		selectedRow = jTable_patient.getSelectedRow();
 		id_patient = model.getValueAt(selectedRow, 0)+"";
@@ -229,6 +241,7 @@ public class PatientManagementView extends JFrame {
 		dayIn =  model.getValueAt(selectedRow, 10)+"";
 		dayOut =  model.getValueAt(selectedRow, 11)+"";
 		
+		//display information:
 		AddPatientView addPatientView = new AddPatientView();
 		addPatientView.jTextField_id.setText(id_patient);
 		addPatientView.jTextField_name.setText(namePatient);

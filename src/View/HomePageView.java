@@ -24,8 +24,7 @@ import javax.swing.KeyStroke;
 import javax.swing.UIManager;
 
 public class HomePageView extends JFrame {
-	private RoomView roomView;
-	private ImageIcon backGround;
+
 
 	public HomePageView() {
 		this.setTitle("Home page");
@@ -36,8 +35,7 @@ public class HomePageView extends JFrame {
 
 		Font font = new Font("Arial", Font.CENTER_BASELINE, 15);
 
-		backGround = new ImageIcon("hospital.png");
-
+		//Generate menu:
 		JMenuBar jMenuBar = new JMenuBar();
 
 		JMenu jMenu_list = new JMenu("List");
@@ -106,6 +104,7 @@ public class HomePageView extends JFrame {
 		JMenuItem jMenuItem_Exit = new JMenuItem("Exit");
 		jMenuItem_Exit.setFont(font);
 		jMenuItem_Exit.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().createImage(HomePageView.class.getResource("Exit3.png"))));
+		// Create key combination for button "Exit":
 		jMenuItem_Exit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F4, InputEvent.ALT_DOWN_MASK));
 		jMenuItem_Exit.addActionListener(new ActionListener() {
 

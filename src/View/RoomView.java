@@ -30,6 +30,7 @@ public class RoomView extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setIconImage(Toolkit.getDefaultToolkit().createImage(RoomView.class.getResource("Room.png")));
 
+		//Load data from database to jTable:
 		Vector vRow = null, vColumn = null;
 
 		try {

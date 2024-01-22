@@ -181,7 +181,7 @@ public class AddPatientView extends JFrame{
 				deleteForm();
 				
 			}
-
+			// delete all details in jTextField:
 			private void deleteForm() {
 					jTextField_id.setText("");
 					jTextField_name.setText("");
@@ -208,7 +208,7 @@ public class AddPatientView extends JFrame{
 				if (e.getActionCommand().equals("Save")) {
 					JOptionPane.showMessageDialog(patientManagementView, "Successful saving!");
 					try {
-						
+						// Get information for each attribute to save:
 						String id_patient = jTextField_id.getText();
 						String namePatient = jTextField_name.getText();
 						String gender = jComboBox_gender.getSelectedItem().toString();
@@ -233,6 +233,8 @@ public class AddPatientView extends JFrame{
 			
 		});
 		jButton_back = new JButton("Back");
+		jButton_back.setFont(new Font("Arial", Font.BOLD, 15));
+		jButton_back.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().createImage(DoctorView.class.getResource("Back.png"))));
 		jButton_back.addActionListener(new ActionListener() {
 			
 			@Override
@@ -241,8 +243,7 @@ public class AddPatientView extends JFrame{
 				new PatientManagementView();		
 			}
 		} );
-		jButton_back.setFont(new Font("Arial", Font.BOLD, 15));
-		jButton_back.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().createImage(DoctorView.class.getResource("Back.png"))));
+		
 		JPanel jPanel_button = new JPanel();
 		jPanel_button.setLayout(new FlowLayout());
 		jPanel_button.add(jButton_Reset);

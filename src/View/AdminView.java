@@ -25,7 +25,6 @@ import javax.swing.UIManager;
 
 public class AdminView extends JFrame {
 	
-	private JPanel jPanel1;
 	private JLabel jLabel_img;
 	private JPanel jPanel_img;
 	private JLabel jLabel_account;
@@ -35,7 +34,6 @@ public class AdminView extends JFrame {
 	private JButton jButton_logIn;
 	private JPasswordField jPasswordField;
 	private JCheckBox jCheckBox_showPass;
-	private JLabel jLabel_showPass;
 	private JLabel jLabel;
 
 	public AdminView() {
@@ -48,7 +46,7 @@ public class AdminView extends JFrame {
 		
 		Font font = new Font("Arial", Font.BOLD, 15);
 		
-		jPanel1 = new JPanel();
+		JPanel jPanel_account = new JPanel();
 		
 		jLabel_img = new JLabel();
 		jLabel_img.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().createImage(AdminView.class.getResource("User2.png"))));
@@ -67,6 +65,8 @@ public class AdminView extends JFrame {
 		jPasswordField.setFont(font);
 		jCheckBox_showPass = new JCheckBox("Show password");
 		jCheckBox_showPass.setFont(font);
+		
+		// Transfer password to char '*':
 		jCheckBox_showPass.addActionListener(new ActionListener() {
 			
 			@Override
@@ -89,10 +89,11 @@ public class AdminView extends JFrame {
 		jPanel_Input.add(jCheckBox_showPass);
 		jPanel_Input.add(jLabel);
 		
-		jPanel1.setLayout(new FlowLayout());
-		jPanel1.add(jLabel_img);
-		jPanel1.add(jPanel_Input);
+		jPanel_account.setLayout(new FlowLayout());
+		jPanel_account.add(jLabel_img);
+		jPanel_account.add(jPanel_Input);
 		
+		//Log in by account:
 		jButton_logIn = new JButton("Log in");
 		jButton_logIn.addActionListener(new ActionListener() {
 			
@@ -115,13 +116,13 @@ public class AdminView extends JFrame {
 		jButton_logIn.setFont(font);
 		jButton_logIn.setForeground(Color.BLUE);
 		
-		JPanel jPanel2 = new JPanel();
-		jPanel2.add(jButton_logIn);	
+		JPanel jPanel_button = new JPanel();
+		jPanel_button.add(jButton_logIn);	
 		
 		
 		this.setLayout(new BorderLayout());
-		this.add(jPanel1, BorderLayout.CENTER);
-		this.add(jPanel2, BorderLayout.SOUTH);
+		this.add(jPanel_account, BorderLayout.CENTER);
+		this.add(jPanel_button, BorderLayout.SOUTH);
 		
 		this.setVisible(true);
 	}
