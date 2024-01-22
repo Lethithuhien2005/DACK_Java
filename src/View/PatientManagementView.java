@@ -232,6 +232,7 @@ public class PatientManagementView extends JFrame {
 		namePatient = model.getValueAt(selectedRow, 1)+"";
 		gender =  model.getValueAt(selectedRow, 2)+"";
 		date_of_birth =  model.getValueAt(selectedRow, 3)+"";
+		
 		address =  model.getValueAt(selectedRow, 4)+"";
 		phone =  model.getValueAt(selectedRow, 5)+"";
 		id_room =  model.getValueAt(selectedRow, 6)+"";

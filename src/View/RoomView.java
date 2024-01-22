@@ -43,7 +43,7 @@ public class RoomView extends JFrame {
 			}
 			vRow = new Vector(50,50);
 			while (rs.next()) {
-				Vector row = new Vector(numCol);
+				Vector row = new Vector(numCol); 
 				for (int i = 1; i <= numCol; i++) {
 					row.add(rs.getString(i));
 				}

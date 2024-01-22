@@ -11,18 +11,18 @@ public class AddPatientDAO {
 
 	public void addPatient(PatientModel pt) {
 		try {
-			String sql = "INSERT INTO patientfile VALUES ('" + pt.getID_patient().toString() + "', '"
-					+ pt.getName_patient().toString() + "', '" 
-					+ pt.getGender().toString()+ "', '" 
-					+ pt.getDate().toString() + "', '"
-					+ pt.getAddress().toString() + "', '"
-					+ pt.getPhone().toString() + "', '"
-					+ pt.getID_room().toString() + "', '"
-					+ pt.getNumber_bed().toString() + "', '"
-					+ pt.getID_disease().toString() + "', '"
-					+ pt.getID_doctor().toString() + "', '"
-					+ pt.getDay_in().toString() + "', '"
-					+ pt.getDay_out().toString() + "')";
+			String sql = "INSERT INTO patientfile VALUES ('" + pt.getID_patient() + "', '"
+					+ pt.getName_patient() + "', '" 
+					+ pt.getGender()+ "', '" 
+					+ pt.getDate() + "', '"
+					+ pt.getAddress() + "', '"
+					+ pt.getPhone() + "', '"
+					+ pt.getID_room() + "', '"
+					+ pt.getNumber_bed() + "', '"
+					+ pt.getID_disease() + "', '"
+					+ pt.getID_doctor() + "', '"
+					+ pt.getDay_in() + "', '"
+					+ pt.getDay_out() + "')";
 			PreparedStatement ps = new DBConnection().conn.prepareStatement(sql);
 			ps.executeUpdate(sql);
 		} catch (Exception ex) {
