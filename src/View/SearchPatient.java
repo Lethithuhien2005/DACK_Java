@@ -42,6 +42,7 @@ public class SearchPatient extends JFrame {
 	
 	ArrayList<PatientModel> arr = new ArrayList<PatientModel>();
 	private DefaultTableModel model;
+	private JButton jButton_back;
 	
 	public SearchPatient() {
 		this.setTitle("Search Patient");
@@ -145,9 +146,25 @@ public class SearchPatient extends JFrame {
 		jButton_search.setFont(font);
 		jButton_search.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().createImage(SearchPatient.class.getResource("Search.png"))));
 		
+		jButton_back = new JButton("Back");
+		jButton_back.setFont(font);
+		jButton_back.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().createImage(SearchPatient.class.getResource("Back.png"))));
+		jButton_back.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (e.getActionCommand().equals("Back")) {
+					new PatientManagementView();
+				}
+				
+			}
+		});
+		
+		
 		JPanel jPanel_button = new JPanel();
 		jPanel_button.setLayout(new FlowLayout());
 		jPanel_button.add(jButton_search);
+		jPanel_button.add(jButton_back);
 		
 		JPanel jPanel = new JPanel();
 		jPanel.setLayout(new BorderLayout());
