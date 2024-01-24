@@ -232,7 +232,6 @@ public class PatientManagementView extends JFrame {
 		namePatient = model.getValueAt(selectedRow, 1)+"";
 		gender =  model.getValueAt(selectedRow, 2)+"";
 		date_of_birth =  model.getValueAt(selectedRow, 3)+"";
-		
 		address =  model.getValueAt(selectedRow, 4)+"";
 		phone =  model.getValueAt(selectedRow, 5)+"";
 		id_room =  model.getValueAt(selectedRow, 6)+"";
@@ -243,19 +242,19 @@ public class PatientManagementView extends JFrame {
 		dayOut =  model.getValueAt(selectedRow, 11)+"";
 		
 		//display information:
-		AddPatientView addPatientView = new AddPatientView();
-		addPatientView.jTextField_id.setText(id_patient);
-		addPatientView.jTextField_name.setText(namePatient);
-		addPatientView.jComboBox_gender.setSelectedItem(gender);
-		addPatientView.jTextField_dateOfBirth.setText(date_of_birth);
-		addPatientView.jTextField_address.setText(address);
-		addPatientView.jTextField_phone.setText(phone);
-		addPatientView.jComboBox_idRoom.setSelectedItem(id_room);
-		addPatientView.jComboBox_numBed.setSelectedItem(numbed);
-		addPatientView.jComboBox_idDisease.setSelectedItem(id_disease);
-		addPatientView.jTextField_idDoctor.setText(id_doctor);
-		addPatientView.jTextField_dayIn.setText(dayIn);
-		addPatientView.jTextField_dayOut.setText(dayOut);
+		UpdatePatientView updatePatientView = new UpdatePatientView();
+		updatePatientView.jLable_idPatient.setText(id_patient);
+		updatePatientView.jTextField_name.setText(namePatient);
+		updatePatientView.jComboBox_gender.setSelectedItem(gender);
+		updatePatientView.jTextField_dateOfBirth.setText(date_of_birth);
+		updatePatientView.jTextField_address.setText(address);
+		updatePatientView.jTextField_phone.setText(phone);
+		updatePatientView.jComboBox_idRoom.setSelectedItem(id_room);
+		updatePatientView.jComboBox_numBed.setSelectedItem(numbed);
+		updatePatientView.jComboBox_idDisease.setSelectedItem(id_disease);
+		updatePatientView.jTextField_idDoctor.setText(id_doctor);
+		updatePatientView.jTextField_dayIn.setText(dayIn);
+		updatePatientView.jTextField_dayOut.setText(dayOut);
 		
 		delete();
 

@@ -69,7 +69,7 @@ public class AddPatientView extends JFrame{
 	
 	
 	public AddPatientView() {
-		this.setTitle("Add new patient or Update");
+		this.setTitle("Add new patient");
 		this.setSize(400, 600);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

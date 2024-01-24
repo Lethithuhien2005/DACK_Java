@@ -2,6 +2,7 @@ package Main;
 
 import javax.swing.UIManager;
 
+import View.AdminView;
 import View.WelcomePage;
 
 public class test {

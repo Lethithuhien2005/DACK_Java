@@ -118,7 +118,22 @@ public class HomePageView extends JFrame {
 			}
 		});
 
+		JMenuItem jMenuItem_logOut = new JMenuItem("Log out");
+		jMenuItem_logOut.setFont(font);
+		jMenuItem_logOut.setIcon(new ImageIcon(Toolkit.getDefaultToolkit().createImage(HomePageView.class.getResource("Back.png"))));
+		jMenuItem_logOut.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (e.getActionCommand().equals("Log out")) {
+					new AdminView();
+				}
+				
+			}
+		});
+		
 		jMenu_File.add(jMenuItem_Exit);
+		jMenu_File.add(jMenuItem_logOut);
 		
 		jMenuBar.add(jMenu_list);
 		jMenuBar.add(jMenu_File);
