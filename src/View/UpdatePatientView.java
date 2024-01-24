@@ -183,7 +183,6 @@ package View;
 				}
 				// delete all details in jTextField:
 				private void deleteForm() {
-					//	jTextField_id.setText("");
 						jTextField_name.setText("");
 						jComboBox_gender.setSelectedIndex(-1);
 						jTextField_dateOfBirth.setText("");
